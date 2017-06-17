@@ -91,10 +91,10 @@ fi
 if ! [ -x "$(command -v resolvconf)" ]
 then
     apt install resolvconf -y -q
-    dpkg-reconfigure resolvconf
+#llo    dpkg-reconfigure resolvconf
 fi
-echo "nameserver 8.8.8.8" > /etc/resolvconf/resolv.conf.d/base
-echo "nameserver 8.8.4.4" >> /etc/resolvconf/resolv.conf.d/base
+#llo echo "nameserver 8.8.8.8" > /etc/resolvconf/resolv.conf.d/base
+#llo echo "nameserver 8.8.4.4" >> /etc/resolvconf/resolv.conf.d/base
 
 # Check network
 if ! [ -x "$(command -v nslookup)" ]
@@ -457,18 +457,18 @@ if [[ "no" == $(ask_yes_or_no "Is this installed on Hyper-V? (4.4 or 4.8 kernel)
 then
     # Kernel 4.4
     apt install --install-recommends -y \
-    linux-virtual-lts-xenial \
-    linux-tools-virtual-lts-xenial \
-    linux-cloud-tools-virtual-lts-xenial \
-    linux-image-virtual-lts-xenial \
+#llo   linux-virtual-lts-xenial \
+#llo    linux-tools-virtual-lts-xenial \
+#llo    linux-cloud-tools-virtual-lts-xenial \
+#llo    linux-image-virtual-lts-xenial \
     linux-image-extra-"$(uname -r)"
 else
     # Kernel 4.8
     apt install --install-recommends -y \
-    linux-virtual-hwe-16.04 \
-    linux-tools-virtual-hwe-16.04 \
-    linux-cloud-tools-virtual-hwe-16.04 \
-    linux-image-virtual-hwe-16.04 \
+#llo    linux-virtual-hwe-16.04 \
+#llo    linux-tools-virtual-hwe-16.04 \
+#llo    linux-cloud-tools-virtual-hwe-16.04 \
+#llo    linux-image-virtual-hwe-16.04 \
     linux-image-extra-"$(uname -r)"
 fi
 
